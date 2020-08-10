@@ -41,4 +41,17 @@ TEST_CASE("Testing MSMap functions"){
         REQUIRE(hasString(results, "AZM"));
     }
 
+    SECTION("Adding 2 values of the same mass will NOT create duplicat strings"){
+        REQUIRE_NOTHROW(map->insert((float)316.308, "ZAM"));
+        REQUIRE_NOTHROW(map->insert((float)316.308, "ZAM"));
+
+        int numSeqs = 0;
+
+        for (std::string result: map->search((float)316.308, 10)){
+            if (result == "ZAM") numSeqs ++;
+        }
+
+        REQUIRE(numSeqs == 1);
+    }
+
 }

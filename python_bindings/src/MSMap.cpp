@@ -22,6 +22,10 @@ void MSMapEntry::addMassSequence(float mass, std::string sequence){
     // if we find a mass remainder that is equal to mass, add the sequence and return
     for (massSequences * ms: this->massSequencesVec){
         if (std::abs(mass - ms->mass) < DELTA){
+
+            // make sure that the vector of sequences DOESN'T already have this sequence
+            for (std::string seq: ms->sequences) if (seq == sequence) return;
+
             ms->sequences.push_back(sequence);
             return;
         }

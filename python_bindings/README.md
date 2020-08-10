@@ -74,6 +74,24 @@ Then the seqeunces of the values that fall within the mass range are returned
 output: [ABC, XYZ]
 ```
 
+## Installation
+To install the python bindings as a package, run 
+```bash
+pip install ms_map
+```
+
+To install the source code, run 
+```bash
+git clone https://github.com/zmcgrath96/ms_map.git
+```
+
+To build the C++ code, run tests and build the python bindings, run
+```bash
+cd ms_map
+$ms_map> chmod u+x build_py.sh
+$ms_map> ./build_py.sh
+```
+
 ## Example
 ```python
 from ms_map import PyMSMap
