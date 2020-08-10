@@ -1,1 +1,5 @@
 *vscode*
+build
+dist 
+ms_map.egg-info
+py_test.py
